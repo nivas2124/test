@@ -1,0 +1,123 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unknown</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="btn">
+        <input type="text" id="inpu">
+        <button onclick="get()">Start</button></div>
+    <div id="no">
+        <p id="p"></p>
+        <p id="br"></p>
+        <p id="pp"></p>
+    </div>
+
+    <button onclick="set()">Set</button>
+
+
+    <!-- <div id="pri" style="display:none"> -->
+    <div id="pri">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            br {
+                display: block;
+                margin: 10px 1;
+            }
+            
+          
+            
+            .grid-item {
+                display: grid;
+                grid-template-columns: auto auto;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.8);
+                /* border: 2px solid rgba(0, 0, 0, 0.8); */
+                font-size: 30px;
+                text-align: center;
+            }
+            .grid-item .grid1{
+
+                background-color: red;
+            }
+            .grid-item .grid2{
+
+                background-color: blue;
+            }
+            .grid-item .grid1 footer{
+                
+                text-align: right;
+                position: absolute;
+                bottom :500px;
+                left : 600px; 
+                width:100px;
+            }
+            .grid-item .grid2   footer {
+                text-align: right;
+                position: absolute;
+                bottom: 500px;
+                right: 600px;
+                width: 100px;
+            }
+        </style>
+        <div class="grid-item">
+            <div class="grid1">
+                <h6>
+                    <u> <center>
+                        Tirupur City Cable Neworks<br> Material Memo
+                    </center>
+                    <p>
+                        <center>for Maheswari Electronics</center>
+                        
+                    </p>
+                    <p>Kindly Provide the below following materials</p></u>
+                  
+                   <h id="damal"></h> 
+
+                   <footer>Regards</footer>
+                </h6>
+  
+            </div>
+            <div class="grid2"> 
+                <h6><u>
+                    <center>
+                        Tirupur City Cable Neworks<br> Material Memo
+                    </center>
+                    <p>
+
+                        <center>for Maheswari Electronics</center>
+                        
+                    </p>
+                    <p>Kindly Provide the below following materials</p>
+                    </u>
+
+
+
+
+                    <a2 id="dumeel"></a2>
+
+                    <footer>Regards</footer>
+                </h6>
+             </div>
+
+
+               
+           
+        </div>
+        
+
+    </div>
+
+
+    <form>
+        <input type="button" value="Click Me" onclick="pri()">
+    </form>
+</body>
+
+</html>
