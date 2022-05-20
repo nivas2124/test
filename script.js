@@ -37,33 +37,33 @@ function checking() {
             case "":
                 text = "     ";
                 break;
-            case "95x05Splitter":
+            case "95x05 Splitter":
                 text = "Set";
                 break;
-            case "90x10Splitter":
+            case "90x10 Splitter":
                 text = "Set";
                 break;
-            case "85x15Splitter":
+            case "85x15 Splitter":
                 text = "Set";
                 break;
-            case "80x20Splitter":
+            case "80x20 Splitter":
                 text = "Set";
                 break;
-            case "75x25Splitter":
+            case "75x25 Splitter":
                 text = "Set";
                 break;
-            case "70x30Splitter":
+            case "70x30 Splitter":
                 text = "Set";
-            case "65x35Splitter":
-                text = "Set";
-                break;
-            case "60x40Splitter":
+            case "65x35 Splitter":
                 text = "Set";
                 break;
-            case "55x45Splitter":
+            case "60x40 Splitter":
                 text = "Set";
                 break;
-            case "50x50Splitter":
+            case "55x45 Splitter":
+                text = "Set";
+                break;
+            case "50x50 Splitter":
                 text = "Set";
                 break;
             case "All Splitter":
