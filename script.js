@@ -2,10 +2,11 @@ var materia = [];
 var def = [];
 var chec = [];
 var def2 = "";
+var pop1;
 
 
 var text;
-var array = ["", "All Splitter", "6 Fiber", "12 Fiber", "Stay Drum", "Binding", "Bobbin", "95x05 Splitter", "90x10 Splitter", "85x15 Splitter", "80x20 Splitter", "75x25 Splitter", "70x30 Splitter", "65x35 Splitter", "60x40 Splitter", "55x45 Splitter", "50x50 Splitter"];
+var array = ["", "All Splitter", "6 Fiber", "12 Fiber", "Stay Drum", "Binding", "Bobbin", "95x05 Splitter", "90x10 Splitter", "85x15 Splitter", "80x20 Splitter", "75x25 Splitter", "70x30 Splitter", "65x35 Splitter", "60x40 Splitter", "55x45 Splitter", "50x50 Splitter", ""];
 var nos = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "15", "20"];
 
 function change() {
@@ -119,7 +120,7 @@ function get() {
 
     var id = components.join("");
     var code = document.getElementById("code");
-    code.innerHTML = "Code is " + id;
+    code.value = id;
 
 
     for (var count = 0; count < input1; count++) {
@@ -140,11 +141,17 @@ function get() {
         selectList.id = "mySelect" + [count];
         selectList.className = "form-control";
         selectList.name = "material" + [count];
+        //  selectList.onchange = poppy();
+        selectList.addEventListener("change", poppy());
+
+
 
         nos_select.id = "nos_select" + [count];
         nos_select.className = "form-control";
         nos_select.name = "va" + [count];
         myParent.appendChild(selectList);
+
+
 
 
 
@@ -191,6 +198,7 @@ function set() {
     checking();
     prin();
     hid2();
+
 }
 
 function hid() {
@@ -213,4 +221,15 @@ function pri() {
     print_area.focus();
     print_area.print();
     print_area.close();
+}
+
+
+function poppy() {
+
+
+    // array.splice(array.indexOf(document.getElementById('mySelect0')), 1);
+    array.pop();
+
+
+
 }
