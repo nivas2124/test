@@ -141,8 +141,7 @@ function get() {
         selectList.id = "mySelect" + [count];
         selectList.className = "form-control";
         selectList.name = "material" + [count];
-        //  selectList.onchange = poppy();
-        selectList.addEventListener("change", poppy());
+
 
 
 
@@ -221,15 +220,4 @@ function pri() {
     print_area.focus();
     print_area.print();
     print_area.close();
-}
-
-
-function poppy() {
-
-
-    // array.splice(array.indexOf(document.getElementById('mySelect0')), 1);
-    array.pop();
-
-
-
 }

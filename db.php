@@ -133,7 +133,7 @@ if(isset($_POST['va0']))
        if($rs)
        {
              
-             header("Location:index.php");
+             header("Location:Purchase.php");
 
        }
 }

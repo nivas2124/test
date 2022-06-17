@@ -1,26 +1,33 @@
 <html>
-<head>
-
-<title>Stock Report</title>
-<meta http-equiv="refresh" content="5"/>
+<head>Select From Range</head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-
-</head>
 
 <body>
-
+    
 <style>
 table, th, td {
   border: 1px solid;
 }
 </style>
+<form method="post">
+From
+<input type="date" id="from" name="from" required>
+To
+<input type="date" id="to" name="to" required>
 
-<h1 style="text-align:center; color:#CC3300;" > Report </h1>
+<input type="submit">
+</form>
+
+<?php
+
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+
+    require('var.php');
+    $sql = "SELECT * FROM `memo` WHERE CONVERT(date, Date) BETWEEN '$from' AND '$to'  ORDER BY `Date` ASC";
+  //  echo $sql;    
+?>
+
 <br>
 <div class="card-body">
               <div class="table-responsive-sm">
@@ -55,7 +62,7 @@ table, th, td {
                   <?php
 							require('var.php');
    							$sl=0;
-							$query1=mysqli_query($con,"select * from `memo` ORDER BY `Date` ASC");
+							$query1=mysqli_query($con,$sql);
              // $query2=mysqli_query($con,"select * from `memo` WHERE sno = (select MAX(sno) FROM `memo`)");
 							while($row=mysqli_fetch_array($query1))
 								{ 
@@ -65,7 +72,7 @@ table, th, td {
 						  <td style="text-align:center"><?php echo $sl; ?></td>
               <td style="text-align:center"><?php echo $row['Date']; ?></td>
               <td style="text-align:center"><?php echo $row['sno']; ?></td>
-              <?php $sno = $row['sno']; ?>
+              <?php $sno[] = $row['Bobbin']; ?>
               <td style="text-align:center"><?php echo $row['All Splitter']; ?></td>
               <td style="text-align:center"><?php echo $row['6 Fiber']; ?></td>
               <td style="text-align:center"><?php echo $row['12 Fiber']; ?></td>
@@ -92,18 +99,22 @@ table, th, td {
                     
 
 
-										<?php } ?>     
+										<?php }  print_r($sno);?> 
+                      
                   </tbody>
                 </table>
-                
-
-                
-
-
-              </div>
+                <script>
+                    var js_array = [<?php echo '"'.implode('","', $sno).'"' ?>];
+                    alert(js_array);  
+                    var results = js_array.filter(element => {
+                      return element !== '';
+                      
+                     });
+                     alert(results);
+                     console.log(results);
+                </script>
+                </div>
             </div>
 
-            
 </body>
 </html>
-
